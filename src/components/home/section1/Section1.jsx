@@ -23,7 +23,7 @@ const Section1 = () => {
     </div>
 
     <div className="section1__right">
-      <img src="/images/kikuri.webp" alt="profile" />
+      <img src="/portfolio_hong/images/kikuri.webp" alt="profile" />
     </div>
 
   </div>
