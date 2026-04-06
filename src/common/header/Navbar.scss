@@ -1,0 +1,170 @@
+// ─── Navbar ─────────────────────────────────────────────────────────────────
+
+$black: #0a0a0a;
+$white: #f5f0e8;
+$accent: #c8a96e;
+$gray-text: #888;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: background 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+  }
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      padding: 0 32px;
+    }
+  }
+
+  // ── 로고
+  &__logo {
+    font-family: "DM Mono", monospace;
+    font-size: 18px;
+    font-weight: 400;
+    color: $white;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+
+    &:hover { color: $accent; }
+  }
+
+  &__logo-bracket {
+    color: $accent;
+  }
+
+  // ── 데스크탑 메뉴
+  &__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: $gray-text;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 4px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: $accent;
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
+      color: $white;
+
+      &::after { width: 100%; }
+    }
+
+    &.active {
+      color: $accent;
+    }
+  }
+
+  // ── 햄버거 버튼
+  &__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: $white;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    &.open {
+      span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+    }
+  }
+
+  // ── 모바일 드로어
+  &__drawer {
+    display: none;
+    background: rgba(10, 10, 10, 0.96);
+    backdrop-filter: blur(12px);
+    padding: 0 32px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+
+    &.open {
+      max-height: 400px;
+      padding: 24px 32px 32px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    a {
+      font-family: "DM Mono", monospace;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      color: $gray-text;
+      text-decoration: none;
+      display: block;
+      transition: color 0.3s;
+
+      &:hover { color: $accent; }
+    }
+  }
+}

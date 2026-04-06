@@ -1,0 +1,188 @@
+// ─── Section4 · Portfolio ───────────────────────────────────────────────────
+
+$black: #0a0a0a;
+$white: #f5f0e8;
+$accent: #c8a96e;
+$gray-dark: #1a1a1a;
+$gray-text: #888;
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section4 {
+  background-color: #0d0d0d;
+  color: $white;
+  padding: 120px 0;
+  font-family: 'Nanum Gothic', sans-serif;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    @media (max-width: 768px) {
+      padding: 0 32px;
+    }
+  }
+
+  // ── 헤더
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  &__label {
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    color: $accent;
+    letter-spacing: 0.1em;
+  }
+
+  &__title {
+    font-family: "DM Mono", monospace;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: $white;
+  }
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(200, 169, 110, 0.4), transparent);
+  }
+
+  // ── 카테고리 태그
+  &__category-tag {
+    display: inline-block;
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: $accent;
+    border: 1px solid rgba(200, 169, 110, 0.3);
+    padding: 6px 14px;
+    margin-bottom: 60px;
+  }
+
+  // ── 목록
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 64px 1fr auto 48px;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+    color: $white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease, opacity 0.7s ease, transform 0.7s ease;
+
+    &:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    &:hover,
+    &.hovered {
+      padding-left: 12px;
+
+      .section4__item-num {
+        color: $accent;
+      }
+
+      .section4__item-title {
+        color: $accent;
+      }
+
+      .section4__item-arrow {
+        color: $accent;
+        transform: translateX(4px);
+      }
+
+      .section4__item-bar {
+        width: 100%;
+      }
+    }
+
+    &.dimmed {
+      opacity: 0.3;
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 48px 1fr 32px;
+
+      .section4__item-cat {
+        display: none;
+      }
+    }
+  }
+
+  &__item-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(to right, $accent, transparent);
+    transition: width 0.6s ease;
+  }
+
+  &__item-num {
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    color: $gray-text;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+
+  &__item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__item-title {
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    transition: color 0.3s;
+  }
+
+  &__item-desc {
+    font-size: 12px;
+    color: $gray-text;
+    font-family: "DM Mono", monospace;
+  }
+
+  &__item-cat {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(200, 169, 110, 0.5);
+    text-transform: uppercase;
+  }
+
+  &__item-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.2);
+    transition: color 0.3s, transform 0.3s;
+  }
+}

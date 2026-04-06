@@ -1,0 +1,228 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section2 {
+  background-color: #000;
+  color: #fff;
+  padding: 120px 0;
+  font-family: 'Nanum Gothic', sans-serif;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  // ── 섹션 헤더
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+
+  &__label {
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    color: #d8d3cb;
+    letter-spacing: 0.1em;
+  }
+
+  &__title {
+    font-family: "DM Mono", monospace;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: #fff;
+  }
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(200, 169, 110, 0.4), transparent);
+  }
+
+  // ── 본문 레이아웃
+  &__body {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 60px;
+  }
+
+  // ── 왼쪽 카드
+  &__card {
+    background: #1a1a1a;
+    border: 1px solid rgba(200, 169, 110, 0.12);
+    padding: 40px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+  }
+
+  &__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgba(200, 169, 110, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  &__avatar-inner {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Mono", monospace;
+    font-size: 20px;
+    color: #d8d3cb;
+    letter-spacing: 0.05em;
+  }
+
+  &__info-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  &__info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+
+      .key {
+        color: #888;
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        min-width: 70px;
+      }
+
+      .val {
+        color: #d8d3cb;
+      }
+    }
+  }
+
+  &__about {
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  &__about-label {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: #d8d3cb;
+    margin-bottom: 12px;
+  }
+
+  &__about-text {
+    font-size: 13px;
+    line-height: 2;
+    color: rgba(245, 240, 232, 0.6);
+  }
+
+  // ── 오른쪽 상세 정보
+  &__right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  &__detail {
+    background: #1a1a1a;
+    border: 1px solid rgba(200, 169, 110, 0.08);
+    padding: 36px;
+    transition-delay: 0.1s;
+
+    &:nth-child(2) { transition-delay: 0.2s; }
+    &:nth-child(3) { transition-delay: 0.3s; }
+    &:nth-child(4) { transition-delay: 0.4s; }
+
+    &:hover {
+      border-color: rgba(200, 169, 110, 0.3);
+      background: rgba(200, 169, 110, 0.03);
+    }
+
+    transition: border-color 0.3s, background 0.3s,
+      opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  &__detail-title {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: #d8d3cb;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(200, 169, 110, 0.15);
+  }
+
+  &__detail ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(245, 240, 232, 0.65);
+      padding-left: 12px;
+      border-left: 2px solid rgba(200, 169, 110, 0.25);
+    }
+  }
+}
+
+/* =========================
+   반응형 부분
+========================= */
+
+@media (max-width: 1024px) {
+  .section2 {
+    &__body {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section2 {
+    &__inner {
+      padding: 0 32px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .section2 {
+    &__right {
+      grid-template-columns: 1fr;
+    }
+  }
+}

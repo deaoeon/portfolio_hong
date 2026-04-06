@@ -1,0 +1,247 @@
+// ─── Section3 · Skills ──────────────────────────────────────────────────────
+
+$black: #0a0a0a;
+$white: #f5f0e8;
+$accent: #c8a96e;
+$gray-dark: #1a1a1a;
+$gray-text: #888;
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section3 {
+  background-color: $black;
+  color: $white;
+  padding: 120px 0;
+  font-family: 'Nanum Gothic', sans-serif;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    @media (max-width: 768px) {
+      padding: 0 32px;
+    }
+  }
+
+  // ── 헤더
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+
+  &__label {
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    color: $accent;
+    letter-spacing: 0.1em;
+  }
+
+  &__title {
+    font-family: "DM Mono", monospace;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: $white;
+  }
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(200, 169, 110, 0.4), transparent);
+  }
+
+  // ── 본문
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // ── 탭 목록
+  &__tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__tab {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 140px 1fr 48px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(200, 169, 110, 0.04);
+      border-color: rgba(200, 169, 110, 0.1);
+    }
+
+    &.active {
+      background: rgba(200, 169, 110, 0.08);
+      border-color: rgba(200, 169, 110, 0.3);
+
+      .section3__tab-label {
+        color: $accent;
+      }
+
+      .section3__tab-fill {
+        background: $accent;
+      }
+    }
+  }
+
+  &__tab-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(245, 240, 232, 0.7);
+    font-family: "DM Mono", monospace;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+
+  &__tab-bar {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+
+  &__tab-fill {
+    height: 100%;
+    background: rgba(200, 169, 110, 0.4);
+    border-radius: 1px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__tab-num {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: $gray-text;
+    text-align: right;
+  }
+
+  // ── 상세 패널
+  &__panel {
+    background: #141414;
+    border: 1px solid rgba(200, 169, 110, 0.12);
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+    transition-delay: 0.2s;
+
+    @media (max-width: 768px) {
+      padding: 32px;
+    }
+  }
+
+  &__panel-header {
+    margin-bottom: 36px;
+  }
+
+  &__panel-tag {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: $accent;
+    margin-bottom: 8px;
+  }
+
+  &__panel-name {
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 700;
+    color: $white;
+    line-height: 1;
+  }
+
+  &__panel-level {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  &__panel-level-label {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: $gray-text;
+    min-width: 36px;
+  }
+
+  &__panel-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__panel-fill {
+    height: 100%;
+    background: linear-gradient(to right, $accent, rgba(200, 169, 110, 0.4));
+    border-radius: 2px;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  }
+
+  &__panel-pct {
+    font-family: "DM Mono", monospace;
+    font-size: 13px;
+    color: $accent;
+    min-width: 36px;
+    text-align: right;
+  }
+
+  &__panel-desc {
+    font-size: 14px;
+    line-height: 2;
+    color: rgba(245, 240, 232, 0.55);
+    margin-bottom: 48px;
+  }
+
+  // ── 배경 워터마크 텍스트
+  &__panel-deco {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-family: "DM Mono", monospace;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(200, 169, 110, 0.04);
+    letter-spacing: -0.02em;
+    pointer-events: none;
+    white-space: nowrap;
+    display: flex;
+
+    span {
+      display: inline-block;
+      animation: floatChar 3s ease-in-out infinite;
+    }
+
+    @keyframes floatChar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  }
+}

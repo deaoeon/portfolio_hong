@@ -1,0 +1,89 @@
+.section1 {
+  font-family: 'Nanum Gothic', sans-serif;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.section1__inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 왼쪽 텍스트 */
+.section1__left {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.section1__title {
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.4;
+  letter-spacing: 2px;
+}
+
+.section1__title strong {
+  font-weight: bold;
+}
+
+.section1__desc {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #aaa;
+  line-height: 1.6;
+}
+.section1__desc2 {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* 오른쪽 이미지 */
+.section1__right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.section1__right img {
+  width: 300px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .section1__inner {
+    flex-direction: column;   // 👉 세로로 쌓기
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .section1__left {
+    margin-left: 0;
+  }
+
+  .section1__title {
+    font-size: clamp(20px, 6vw, 28px);  // 👉 모바일 폰트 줄이기
+    letter-spacing: 1px;
+  }
+
+  .section1__desc {
+    font-size: 14px;
+  }
+  .section1__desc2 {
+    font-size: 14px;
+  }
+
+  .section1__right {
+    margin-top: 30px;
+  }
+
+  .section1__right img {
+    width: 200px;  // 👉 이미지도 살짝 축소
+  }
+}

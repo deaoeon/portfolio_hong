@@ -1,2 +1,5 @@
-# portfolio_hong
-portfolio_hong
+공식 문서: https://docs.pmnd.rs/zustand
+
+yarn add zustand
+
+npm install zustand
