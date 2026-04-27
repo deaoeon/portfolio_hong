@@ -68,8 +68,8 @@
   }
 
   &__avatar {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 2px solid rgba(200, 169, 110, 0.3);
     display: flex;
@@ -79,8 +79,8 @@
   }
 
   &__avatar-inner {
-    width: 88px;
-    height: 88px;
+    width: 105px;
+    height: 105px;
     border-radius: 50%;
     background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
     display: flex;
@@ -90,6 +90,7 @@
     font-size: 20px;
     color: #d8d3cb;
     letter-spacing: 0.05em;
+    overflow: hidden;
   }
 
   &__info-name {
