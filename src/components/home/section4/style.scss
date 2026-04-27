@@ -42,14 +42,14 @@ $gray-text: #888;
   }
 
   &__label {
-    font-family: "DM Mono", monospace;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 12px;
     color: $accent;
     letter-spacing: 0.1em;
   }
 
   &__title {
-    font-family: "DM Mono", monospace;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: clamp(28px, 4vw, 48px);
     font-weight: 400;
     letter-spacing: 0.2em;
@@ -65,7 +65,7 @@ $gray-text: #888;
   // ── 카테고리 태그
   &__category-tag {
     display: inline-block;
-    font-family: "DM Mono", monospace;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 11px;
     letter-spacing: 0.25em;
     color: $accent;
@@ -144,7 +144,7 @@ $gray-text: #888;
   }
 
   &__item-num {
-    font-family: "DM Mono", monospace;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 12px;
     color: $gray-text;
     letter-spacing: 0.05em;
@@ -167,11 +167,11 @@ $gray-text: #888;
   &__item-desc {
     font-size: 12px;
     color: $gray-text;
-    font-family: "DM Mono", monospace;
+    font-family: 'Nanum Gothic', sans-serif;
   }
 
   &__item-cat {
-    font-family: "DM Mono", monospace;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 10px;
     letter-spacing: 0.15em;
     color: rgba(200, 169, 110, 0.5);
@@ -184,5 +184,52 @@ $gray-text: #888;
     justify-content: center;
     color: rgba(255, 255, 255, 0.2);
     transition: color 0.3s, transform 0.3s;
+  }
+  // ── 역할 드롭다운
+  &__item-roles {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__item:hover &__item-roles,
+  &__item.hovered &__item-roles {
+    grid-template-rows: 1fr;
+  }
+
+  &__item-roles-inner {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__roles-label {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: rgba(200, 169, 110, 0.5);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &__roles-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__roles-tag {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: $accent;
+    border: 1px solid rgba(200, 169, 110, 0.25);
+    padding: 4px 12px;
+    background: rgba(200, 169, 110, 0.05);
   }
 }

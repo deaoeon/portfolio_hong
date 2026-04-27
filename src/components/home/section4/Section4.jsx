@@ -4,19 +4,21 @@ import "../section4/style.scss";
 const portfolioItems = [
   {
     id: 1,
-    title: "GENESIS",
+    title: "FORM GUNG",
     category: "CLONE CODING",
-    desc: "자동차 브랜드 제네시스 클론 코딩",
-    url: "https://gygma10.mycafe24.com/portfolio/1.Genesis/index.html",
+    desc: "프로젝트 궁에서 온",
+    url: "https://from-gung-project-three.vercel.app/",
     num: "01",
+    roles: ["팀 리더", "메인 레이아웃 설계", "GSAP 애니메이션 구현", "반응형 작업"],
   },
   {
     id: 2,
-    title: "CKDCOS",
+    title: "PROJECT CASETIFY",
     category: "CLONE CODING",
-    desc: "화장품 브랜드 클론 코딩",
-    url: "https://gygma10.mycafe24.com/portfolio/2.Ckdcos/index.html",
+    desc: "케이스티파이 랜딩 페이지 리뉴얼",
+    url: "https://team-project-casetify-eight.vercel.app/",
     num: "02",
+    roles: ["K-Content Lineup 섹션 제작", "삼성, 애플, ACC 섹션 제작", "CSS 애니메이션"],
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const portfolioItems = [
     desc: "아임웹 랜딩 페이지 클론 코딩",
     url: "https://gygma10.mycafe24.com/portfolio/3.Imweb/index.html",
     num: "03",
+    roles: ["전체 단독 작업", "섹션별 레이아웃 구현", "슬라이더 기능 개발"],
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ const portfolioItems = [
     desc: "카페 브랜드 클론 코딩",
     url: "https://gygma10.mycafe24.com/portfolio/4.Mgcoffee/index.html",
     num: "04",
+    roles: ["전체 단독 작업", "브랜드 무드 UI 설계", "메뉴 섹션 인터랙션"],
   },
 ];
 
@@ -60,7 +64,6 @@ const Section4 = () => {
   return (
     <section className="section4" id="portfolio" ref={sectionRef}>
       <div className="section4__inner">
-        {/* 헤더 */}
         <div className="section4__header reveal">
           <h2 className="section4__title">PORTFOLIO</h2>
           <div className="section4__line" />
@@ -68,7 +71,6 @@ const Section4 = () => {
 
         <div className="section4__category-tag reveal">LIST</div>
 
-        {/* 포트폴리오 목록 */}
         <div className="section4__list">
           {portfolioItems.map((item) => (
             <a
@@ -94,6 +96,19 @@ const Section4 = () => {
                   />
                 </svg>
               </div>
+
+              {/* 역할 드롭다운 */}
+              <div className="section4__item-roles">
+                <div className="section4__item-roles-inner">
+                  <span className="section4__roles-label">ROLE</span>
+                  <ul className="section4__roles-list">
+                    {item.roles.map((role, i) => (
+                      <li key={i} className="section4__roles-tag">{role}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
               <div className="section4__item-bar" />
             </a>
           ))}

@@ -60,7 +60,7 @@ const Section2 = () => {
             <div className="section2__card">
               <div className="section2__avatar">
                 <div className="section2__avatar-inner">
-                  <span>GJ</span>
+                  <img src="images/hong2.jpg" alt="hong2" />
                 </div>
               </div>
               <div className="section2__info">
