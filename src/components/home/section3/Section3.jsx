@@ -91,8 +91,8 @@ const Section3 = () => {
               <button
                 key={skill.id}
                 className={`section3__tab ${activeSkill.id === skill.id ? "active" : ""}`}
-                onClick={() => setActiveSkill(skill)}
-                style={{ transitionDelay: `${i * 0.05}s` }}
+                onMouseEnter={() => setActiveSkill(skill)}
+                style={{ transitionDelay: `${i * 0.02}s` }}
               >
                 <span className="section3__tab-label">{skill.label}</span>
                 <div className="section3__tab-bar">
