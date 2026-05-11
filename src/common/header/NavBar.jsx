@@ -6,7 +6,7 @@ const navItems = [
   { label: "PROFILE", href: "#profile" },
   { label: "SKILL", href: "#skill" },
   { label: "PORTFOLIO", href: "#portfolio" },
-  { label: "CONTACT", href: "#contact" },
+  // { label: "CONTACT", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
       setScrolled(window.scrollY > 40);
 
       // 현재 섹션 감지
-      const ids = ["home", "profile", "skill", "portfolio", "contact"];
+      const ids = ["home", "profile", "skill", "portfolio",];
       for (let i = ids.length - 1; i >= 0; i--) {
         const el = document.getElementById(ids[i]);
         if (el && window.scrollY >= el.offsetTop - 200) {
