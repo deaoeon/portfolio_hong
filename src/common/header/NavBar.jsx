@@ -47,7 +47,7 @@ const Navbar = () => {
           onClick={(e) => { e.preventDefault(); handleNav("#home"); }}
         >
           <span className="navbar__logo-bracket">[</span>
-          Hong
+          HONG
           <span className="navbar__logo-bracket">]</span>
         </a>
 
